@@ -14,6 +14,7 @@ public class Combination {
 
 	}
 	
+	
 	public List<List<Integer>> combine(int n,int k){
 		int[] nums = new int[n];
 		for(int i = 1;i <= n;i++){
@@ -25,7 +26,6 @@ public class Combination {
 		helper(nums,res,new ArrayList<Integer>(),0,k);
 		
 		return res;
-		
 		
 	}
 	
