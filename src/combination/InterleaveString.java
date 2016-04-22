@@ -1,4 +1,4 @@
-package leetcode;
+package combination;
 
 /**
  * Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
@@ -41,7 +41,7 @@ public class InterleaveString {
         int s1Length = s1.length();
         int s2Length = s2.length();
         
-        //boolean[i][j] ±íÊ¾s3µÄÇ°i+jÎ»£¬ÊÇ·ñ¿ÉÒÔÓÉs1µÄÇ°iÎ»¼ÓÉÏs2µÄÇ°jÎ»½»²æµÃµ½¡£
+        //boolean[i][j] ï¿½ï¿½Ê¾s3ï¿½ï¿½Ç°i+jÎ»ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s1ï¿½ï¿½Ç°iÎ»ï¿½ï¿½ï¿½ï¿½s2ï¿½ï¿½Ç°jÎ»ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½
         boolean[][] path = new boolean[s1Length + 1][s2Length + 1];
         path[0][0] = true; 
         
