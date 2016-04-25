@@ -36,6 +36,7 @@ public class HouseRobber {
 		return mount[nums.length];
 	}
 	
+	//if the houses are arranged in a circle.
 	public static int rob2(int[] nums) {
 		if (nums.length == 0) {
 			return 0;
