@@ -75,12 +75,8 @@ public class SumRangeQuery {
 		System.out.println(sumRange.sumRange(1, 2));
 		sumRange.update(1, 2);
 		System.out.println(sumRange.sumRange(1, 2));
-		System.out.println(new Test().a);
 	}
 
-}
-class Test{
-	int a;
 }
 
 
