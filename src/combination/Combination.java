@@ -1,6 +1,7 @@
 package combination;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Combination {
@@ -10,9 +11,12 @@ public class Combination {
 		
 		//System.out.println(new Combination().myCombine(4, 2));
 		Combination combination = new Combination();
-		System.out.println(new Combination().combine(4, 2));
 		
-		System.out.println(combination.combineSum3(3, 9));
+		int[] candidates = new int[]{10,1,2,7,6,1,5};
+		System.out.println(combination.combinationSum2(candidates, 8));
+		/*System.out.println(new Combination().combine(4, 2));
+		
+		System.out.println(combination.combineSum3(3, 9));*/
 
 	}
 	
@@ -74,6 +78,69 @@ public class Combination {
 			combineSumHelper(total,nums,res,cur,i+1,len);
 			cur.remove(cur.size()-1);
 		}
+	}
+	
+	
+	public List<List<Integer>> combinationSum(int[] candidates,int target){
+		List<List<Integer>> result = new ArrayList<>();
+		Arrays.sort(candidates);
+		
+		backTracking(candidates,new ArrayList<Integer>(),result,0,target);
+		
+		return result;
+		
+	}
+	
+	private void backTracking(int[] candidates,List<Integer> item,List<List<Integer>> result,int start,int target){
+		
+		if(sum(item) == target){
+			if(!result.contains(item)){
+				result.add(new ArrayList<Integer>(item));
+			}
+			return;
+		}
+		
+		for(int i = start;i < candidates.length;i++){
+			item.add(candidates[i]);
+			if(sum(item) > target){
+				item.remove(item.size()-1);
+				return;
+			}
+			backTracking(candidates,item,result,i,target);
+			item.remove(item.size()-1);
+		}
+		
+	}
+	
+	public List<List<Integer>> combinationSum2(int[] candidates,int target){
+		List<List<Integer>> result = new ArrayList<>();
+		Arrays.sort(candidates);
+		
+		backTracking2(candidates,new ArrayList<Integer>(),result,0,target);
+		
+		return result;
+		
+	}
+	
+	private void backTracking2(int[] candidates,List<Integer> item,List<List<Integer>> result,int start,int target){
+		
+		if(sum(item) == target){
+			if(!result.contains(item)){
+				result.add(new ArrayList<Integer>(item));
+			}
+			return;
+		}
+		
+		for(int i = start;i < candidates.length;i++){
+			item.add(candidates[i]);
+			if(sum(item) > target){
+				item.remove(item.size()-1);
+				return;
+			}
+			backTracking2(candidates,item,result,i+1,target);
+			item.remove(item.size()-1);
+		}
+		
 	}
 	
 	private int sum(List<Integer> list){
