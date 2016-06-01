@@ -17,7 +17,8 @@ public class CreateMaxNumber {
 	    int[] ans = new int[k];
 	    for (int i = Math.max(0, k - m); i <= k && i <= n; i++) {
 	        int[] candidate = merge(maxArray(nums1, i), maxArray(nums2, k - i), k);
-	        if (greater(candidate, 0, ans, 0)) ans = candidate;
+	        if (greater(candidate, 0, ans, 0)) 
+	        	ans = candidate;
 	    }
 	    return ans;
 	}
