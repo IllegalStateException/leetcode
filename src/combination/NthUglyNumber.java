@@ -22,7 +22,7 @@ public class NthUglyNumber {
 		
 		queue.offer(1l);
 		int index = 0;
-		while(index < n-1){
+		while(index < n-1){ 
 			long num = queue.poll();
 			if(num % 30 == 0){
 				queue.poll();
