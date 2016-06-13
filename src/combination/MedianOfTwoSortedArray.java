@@ -23,7 +23,6 @@ public class MedianOfTwoSortedArray {
         Integer temp2 = null;
         
         int mid = (n + m) /2;
-        //int[] combin = new int[mid+1];
         int temp = 0;
         for(;i < n && j < m;k++){
         	
@@ -32,7 +31,6 @@ public class MedianOfTwoSortedArray {
         	}
         	else if(nums1[i] == nums2[j]){
         		temp = nums1[i++];
-        		//combin[k] = nums2[j++];
         	}
         	else{
         		temp = nums2[j++];
