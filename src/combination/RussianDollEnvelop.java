@@ -41,41 +41,6 @@ public class RussianDollEnvelop {
         	}
         }
         return max;
-        
-		/*Arrays.sort(envelopes, new Comparator<int[]>(){
-			@Override
-			public int compare(int[] param1,int[] param2){
-				if(param1[0] == param2[0])
-					return param1[1] - param2[1];
-				else
-					return param1[0] - param2[0];
-			}
-		});
-		
-		int max = 1;
-		int[] lastEnvelop = envelopes[0];
-		int temp = 0;
-		//int lastNum;
-		
-		for(int i = 1;i < envelopes.length;i++){
-			int[] envelop = envelopes[i];
-			if(envelop[0] > lastEnvelop[0] && envelop[1] > lastEnvelop[1]){
-				max++;
-				lastEnvelop = envelop;
-			}
-			else if(envelop[0] > lastEnvelop[0] && envelop[1] < lastEnvelop[1]){
-				int count1 = 0,count2 = 0;
-				for(int j = i+1;j < envelopes.length;j++){
-					if(envelopes[j][0] > envelop[0] && envelopes[j][1] > envelop[1])
-						count1++;
-					if(envelopes[j][0] > lastEnvelop[0] && envelopes[j][1] > lastEnvelop[1])
-						count2++;
-				}
-				if(count1 >= count2)
-					lastEnvelop = envelop;
-			}
-		}
-		return max;*/
     }
 }
 
